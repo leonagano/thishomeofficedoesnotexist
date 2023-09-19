@@ -4,8 +4,8 @@ import os
 app = Flask(__name__)
 
 #OFFICES_FOLDER = os.path.join(os.getcwd(), "/offices")
-#OFFICES_FOLDER = os.path.relpath("/offices")
-OFFICES_FOLDER = os.path.dirname("/offices")
+OFFICES_FOLDER = os.path.relpath("offices")
+#OFFICES_FOLDER = os.path.dirname("/offices")
 
 @app.route("/")
 def index():
@@ -16,6 +16,7 @@ def index():
 
 
 def selected_image(image_filename):
+    print(OFFICES_FOLDER)
     image_files = [filename for filename in os.listdir(OFFICES_FOLDER) if filename.lower().endswith('.png')]
     if image_filename == "abcd":
         #image_files = os.listdir(OFFICES_FOLDER)
