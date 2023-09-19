@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZXJRPYRBPD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZXJRPYRBPD');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This Home Office Does Not Exist - A collection of AI-generated home office designs.">
+    <meta property="og:title" content="This Home Office Does Not Exist">
+    <meta property="og:description" content="A collection of AI-generated home office designs.">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="This Home Office Does Not Exist">
+    <meta name="twitter:description" content="A collection of AI-generated home office designs.">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:url" content="">
+    <title id="title">This Home Office Does Not Exist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 0;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 500;
+        }
+        h2 {
+            font-weight: bolder;
+            font-size: 30px;
+            color: rgb(88, 46, 177);
+            margin-bottom: 10px;
+            word-spacing: -5px;
+
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        @media only screen and (max-width: 600px) {
+          .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            text-align: center;
+            }
+
+        }
+        .grid img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 2%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .grid img:hover {
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #fff;
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2; /* Place it above the modal */
+        }
+
+        .grid .grid-item {
+          position: relative;
+          z-index: 90; /* Ensure the modal is above the overlay */
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: rgba(58, 0, 180, 0.59);
+            color: white;
+            padding: 5px;
+            opacity: 1; /* Initially hide the overlay text */
+        }
+
+        .overlay-text a {
+            text-decoration: underline;
+            color: white;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            text-align: center;
+            width: 60%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .modal-content h1 {
+            margin-top: 20px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>This Home Office Does Not Exist</h2>
+        <h1 id="h1">A collection of AI-generated home office designs (new designs daily-created)</h1>
+        <div class="grid">
+            <!-- Replace these placeholders with your image URLs -->
+            <div style="background-color: lightgrey;border-radius: 2px;padding-top: 40%;">
+                <span style="color: darkblue;font-weight: bold;font-size: 20px;"><a href="https://buy.stripe.com/bIY3gj1JvcCzbhS8wz" target="_blank">Sponsor an office</a></span>
+                <br/><br/>
+                <span><b>$99 per week</b></span>
+            </div>
+                {% for image_file in image_files %}
+                    <div class="grid-item">
+                        <img src="{{ url_for('custom_image', image_filename=image_file) }}" alt="{{ image_file }}" class="modal-trigger" data-image-url="{{ url_for('custom_image', image_filename=image_file) }}" loading="lazy">
+
+                        {% if loop.index == 1 %}
+                            <div class="overlay-text">
+                                <span><a href="https://buy.stripe.com/bIY3gj1JvcCzbhS8wz" target="_blank">Sponsor any office</a></span> 
+                            </div>
+                        {% endif %}
+                        
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Modal Image" width="70%">
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2023 This Home Office Does Not Exist - by <a href="https://twitter.com/leonagano" target="_blank">@leonagano</a>
+    </footer>
+    <script>
+
+
+        var h1Value = "A collection of AI-generated home office designs (new designs daily-created)";
+        var titleValue = "This Home Office Does Not Exist";
+        
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+        var modalTriggers = document.querySelectorAll(".modal-trigger");
+        var modal = document.querySelector(".modal");
+        var modalContent = document.querySelector(".modal-content");
+        var modalImage = document.querySelector("#modalImage");
+        var h1 = document.getElementById("h1");
+        var title = document.getElementById("title");
+        const meta = document.getElementsByTagName('meta')
+
+        // Speficic office is entered in the url
+        if (location.pathname.split('/').slice(1) != "") {
+            image = location.pathname.split('/').slice(1);
+            modalImage.src = "/offices/" + image + ".png";
+            modal.style.display = "block";
+        }
+
+
+
+
+        modalTriggers.forEach(function (trigger) {
+            trigger.addEventListener("click", function () {
+                var imageUrl = this.getAttribute("data-image-url");
+                modalImage.src = imageUrl;
+                modal.style.display = "block";
+
+                // Change the URL
+                var customUrl = imageUrl.split('.')[0]; // Remove the file extension
+                customUrl = customUrl.split('/offices/')[1];
+                history.pushState(null, null, `/${customUrl}`);
+
+                let h1custom = customUrl.replace(/-/g, " ");
+                h1.innerHTML = h1custom
+                title.innerHTML = h1custom + " - designed by AI"
+
+                meta.
+                
+                $("meta[property='og\\title']").attr("content", h1custom + " - designed by AI");
+            });
+        });
+
+        var closeModal = document.querySelector(".close");
+        closeModal.addEventListener("click", function () {
+            h1.innerHTML = h1Value
+            title.innerHTML = titleValue
+            closeModalHandler();
+        });
+
+        // Close the modal when clicking outside of it
+        window.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                h1.innerHTML = h1Value
+                title.innerHTML = titleValue
+                closeModalHandler();
+            }
+        });
+
+        // Handle the back button to close the modal and revert the URL
+        window.addEventListener("popstate", function () {
+            closeModalHandler();
+        });
+
+        function closeModalHandler() {
+            modal.style.display = "none";
+            // Revert the URL to the index page
+            history.pushState(null, null, "/");
+        }
+    });
+    </script>
+</body>
+</html>
