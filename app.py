@@ -12,11 +12,11 @@ def index():
     # Get a list of image filenames in the "offices" folder
     # image_files = os.listdir(OFFICES_FOLDER)
     # return render_template("index.html", image_files=image_files)
+    print(os.getcwd())
     return selected_image("abcd")
 
 
 def selected_image(image_filename):
-    print(OFFICES_FOLDER)
     image_files = [filename for filename in os.listdir(OFFICES_FOLDER) if filename.lower().endswith('.png')]
     if image_filename == "abcd":
         #image_files = os.listdir(OFFICES_FOLDER)
