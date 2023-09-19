@@ -3,7 +3,8 @@ import os
 
 app = Flask(__name__)
 
-OFFICES_FOLDER = os.path.join(os.getcwd(), "/offices")
+#OFFICES_FOLDER = os.path.join(os.getcwd(), "/offices")
+OFFICES_FOLDER = os.path.relpath("/offices")
 
 @app.route("/")
 def index():
