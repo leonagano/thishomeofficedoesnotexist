@@ -4,7 +4,7 @@ import os
 app = Flask(__name__)
 
 #OFFICES_FOLDER = os.path.join(os.getcwd(), "/offices")
-OFFICES_FOLDER = os.path.relpath("offices")
+OFFICES_FOLDER = os.path.relpath("thishomeofficedoesnotexist/offices")
 #OFFICES_FOLDER = os.path.dirname("/offices")
 
 @app.route("/")
@@ -12,8 +12,6 @@ def index():
     # Get a list of image filenames in the "offices" folder
     # image_files = os.listdir(OFFICES_FOLDER)
     # return render_template("index.html", image_files=image_files)
-    print("=========")
-    print(os.getcwd())
     return selected_image("abcd")
 
 
