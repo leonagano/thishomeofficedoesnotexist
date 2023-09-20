@@ -226,6 +226,17 @@
             image = location.pathname.split('/').slice(1);
             modalImage.src = "/offices/" + image + ".png";
             modal.style.display = "block";
+
+
+            // Change the URL
+            var customUrl = imageUrl.split('.')[0]; // Remove the file extension
+            customUrl = customUrl.split('/offices/')[1];
+            history.pushState(null, null, `/${customUrl}`);
+
+            let h1custom = customUrl.replace(/-/g, " ");
+            h1.innerHTML = h1custom
+            title.innerHTML = h1custom + " - designed by AI";
+            modalDesc.innerHTML = h1custom
         }
 
 
