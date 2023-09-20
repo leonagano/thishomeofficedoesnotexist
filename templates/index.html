@@ -126,7 +126,7 @@
             display: none;
             position: fixed;
             z-index: 100;
-            padding-top: 100px;
+            padding-top: 30px;
             left: 0;
             top: 0;
             width: 100%;
@@ -193,14 +193,18 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <img id="modalImage" src="" alt="Modal Image" width="70%">
+            <br/>
+            <span id="modalDesc" style="font-weight:bold;"></span>
+            <br/>
+            <br/>
+            <span><a href="#" onclick="copy()" style="color: rgba(58, 0, 180, 1);font-size: 1.2em;font-weight: bold;">Share this office</span>
         </div>
     </div>
 
     <footer>
-        &copy; 2023 This Home Office Does Not Exist - by <a href="https://twitter.com/leonagano" target="_blank">@leonagano</a>
+        <a href="https://twitter.com/leonagano" target="_blank">@leonagano</a>
     </footer>
     <script>
-
 
         var h1Value = "A collection of AI-generated home office designs (new designs daily-created)";
         var titleValue = "This Home Office Does Not Exist";
@@ -215,6 +219,7 @@
         var h1 = document.getElementById("h1");
         var title = document.getElementById("title");
         const meta = document.getElementsByTagName('meta')
+        var modalDesc = document.getElementById("modalDesc");
 
         // Speficic office is entered in the url
         if (location.pathname.split('/').slice(1) != "") {
@@ -239,11 +244,9 @@
 
                 let h1custom = customUrl.replace(/-/g, " ");
                 h1.innerHTML = h1custom
-                title.innerHTML = h1custom + " - designed by AI"
+                title.innerHTML = h1custom + " - designed by AI";
+                modalDesc.innerHTML = h1custom
 
-                meta.
-                
-                $("meta[property='og\\title']").attr("content", h1custom + " - designed by AI");
             });
         });
 
@@ -274,6 +277,16 @@
             history.pushState(null, null, "/");
         }
     });
+
+        function copy() {
+          let url = document.location.href;
+
+            navigator.clipboard.writeText(url).then(function() {
+                alert("Office's URL copied to clipboard. You can now share it.")
+            }, function() {
+                console.log('Copy error')
+            });
+        };
     </script>
 </body>
 </html>
